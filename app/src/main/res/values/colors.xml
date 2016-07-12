@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1c428b</color>
+    <color name="colorPrimaryDark">#5372ae</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorNavigation">#424242</color>
+    <color name="colorBackground">#424242</color>
+    <color name="colorItemDrawer">#ffffff</color>
+    <color name="colorBetTitle">#ffffff</color>
+    <color name="colorNavigationHeader">#7f7f7f</color>
+</resources>

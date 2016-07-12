@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group1" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_football"
+            android:icon="@drawable/ic_menu_football"
+            android:title="@string/football" />
+        <item
+            android:id="@+id/nav_basketball"
+            android:icon="@drawable/ic_menu_basketball"
+            android:title="@string/basketball" />
+        <item
+            android:id="@+id/nav_autres"
+            android:icon="@drawable/ic_menu_autres"
+            android:title="@string/autres" />
+    </group>
+
+    <group android:id="@+id/group2" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_resultats"
+            android:icon="@drawable/ic_menu_resultats"
+            android:title="@string/resultats" />
+    </group>
+
+    <group android:id="@+id/group3" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_menu_contact"
+            android:title="@string/contact" />
+        <item
+            android:id="@+id/nav_vote"
+            android:icon="@drawable/ic_menu_vote"
+            android:title="@string/vote" />
+    </group>
+
+</menu>

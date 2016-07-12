@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Cote&amp;Sport</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string-array name="string_array_choices">
+        <item>menu 1</item>
+        <item>menu 2</item>
+        <item>menu 3</item>
+        <item>menu 4</item>
+    </string-array>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="cotesport">COTE\u0026SPORT</string>
+    <string name="football">FOOT-BALL</string>
+    <string name="basketball">BASKET-BALL</string>
+    <string name="autres">AUTRES</string>
+    <string name="resultats">RÉSULTATS</string>
+    <string name="contact">CONTACTEZ-NOUS</string>
+    <string name="vote">VOTER L\u0027APPLICATION</string>
+    <string name="resultat_final">Résultat Final</string>
+    <string name="double_chance">Double Chance</string>
+    <string name="hdc">Résultat final avec Handicap</string>
+    <string name="mi_temps">Mi-Temps</string>
+    <string name="moins_plus">Moins/Plus</string>
+    <string name="total_buts">Total des buts</string>
+    <string name="score_exact">Score Exact</string>
+    <string name="mi_temps_resultat_final">Mi-Temps/Résultat Final</string>
+    <string name="debut">Début</string>
+    <string name="debut_2">Déb</string>
+    <string name="c">C</string>
+    <string name="mini">Min</string>
+    <string name="min_2">Mi</string>
+    <string name="equipe_1">Equipe 1</string>
+    <string name="equipe_2">Equipe 2</string>
+    <string name="hdc_1">Hc 1</string>
+    <string name="hdc_2">Hc 2</string>
+    <string name="r_1">1</string>
+    <string name="r_x">x</string>
+    <string name="r_2">2</string>
+    <string name="r_1x">1x</string>
+    <string name="r_12">12</string>
+    <string name="r_x2">x2</string>
+    <string name="moins">Moins</string>
+    <string name="plus">Plus</string>
+    <string name="r_0_1">0-1</string>
+    <string name="r_1_1">1-1</string>
+    <string name="r_x_1">x-1</string>
+    <string name="r_2_1">2-1</string>
+    <string name="r_1_x">1-x</string>
+    <string name="r_x_x">x-x</string>
+    <string name="r_2_x">2-x</string>
+    <string name="r_1_2">1-2</string>
+    <string name="r_x_2">x-2</string>
+    <string name="r_2_2">2-2</string>
+    <string name="r_2_3">2-3</string>
+    <string name="r_4_plus">4+</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
