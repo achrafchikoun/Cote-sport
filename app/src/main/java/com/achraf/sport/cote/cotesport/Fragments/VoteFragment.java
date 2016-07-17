@@ -117,7 +117,6 @@ public class VoteFragment extends Fragment implements View.OnClickListener{
         switch(view.getId()){
             case R.id.voteButton:
                 String appPackageName = view.getContext().getPackageName();
-                appPackageName = "com.achrafchikoun.cote.toto";
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
                 break;
         }
