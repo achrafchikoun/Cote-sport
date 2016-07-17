@@ -17,13 +17,17 @@ import android.view.MenuItem;
 
 import com.achraf.sport.cote.cotesport.Fragments.AutresFragment;
 import com.achraf.sport.cote.cotesport.Fragments.BasketballFragment;
+import com.achraf.sport.cote.cotesport.Fragments.ContactFragment;
 import com.achraf.sport.cote.cotesport.Fragments.FootballFragment;
+import com.achraf.sport.cote.cotesport.Fragments.VoteFragment;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         FootballFragment.OnFragmentInteractionListener,
         BasketballFragment.OnFragmentInteractionListener,
-        AutresFragment.OnFragmentInteractionListener {
+        AutresFragment.OnFragmentInteractionListener,
+        ContactFragment.OnFragmentInteractionListener,
+        VoteFragment.OnFragmentInteractionListener{
 
     Fragment fragment;
     Toolbar toolbar;
@@ -34,6 +38,7 @@ public class HomeActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
 
         setTitle(this.getResources().getString(R.string.football));
         initDrawerNavigation();
@@ -107,6 +112,20 @@ public class HomeActivity extends AppCompatActivity
             case R.id.nav_autres :
                 if(!(fragment instanceof  AutresFragment)) {
                     fragment = new AutresFragment();
+                    setFragmentManager(fragment);
+                }
+                break;
+
+            case R.id.nav_contact :
+                if(!(fragment instanceof ContactFragment)) {
+                    fragment = new ContactFragment();
+                    setFragmentManager(fragment);
+                }
+                break;
+
+            case R.id.nav_vote :
+                if(!(fragment instanceof VoteFragment)) {
+                    fragment = new VoteFragment();
                     setFragmentManager(fragment);
                 }
                 break;

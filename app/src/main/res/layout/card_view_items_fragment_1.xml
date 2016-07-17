@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/textview_bet_date_drawable"
+                android:gravity="center"
+                android:text="@string/debut"
+                android:textStyle="bold"
+                android:textColor="@color/colorBetTitle"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtDebut"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight=".1"
+                    android:background="@drawable/textview_bet_drawable"
+                    android:gravity="center"
+                    android:text="@string/debut"
+                    android:textColor="@color/colorBetText"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txtC"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight=".08"
+                    android:background="@drawable/textview_bet_drawable"
+                    android:gravity="center"
+                    android:text="@string/c"
+                    android:textColor="@color/colorBetText"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txtMin"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight=".08"
+                    android:background="@drawable/textview_bet_drawable"
+                    android:gravity="center"
+                    android:text="@string/mini"
+                    android:textColor="@color/colorBetText"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txtEquipe1"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight=".26"
+                    android:background="@drawable/textview_bet_drawable"
+                    android:gravity="center"
+                    android:text="@string/equipe_1"
+                    android:textColor="@color/colorBetText"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txtEquipe2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight=".26"
+                    android:background="@drawable/textview_bet_drawable"
+                    android:gravity="center"
+                    android:text="@string/equipe_2"
+                    android:textColor="@color/colorBetText"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txt1"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight=".08"
+                    android:background="@drawable/textview_bet_drawable"
+                    android:gravity="center"
+                    android:text="@string/r_1"
+                    android:textColor="@color/colorBetText"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txtx"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight=".08"
+                    android:background="@drawable/textview_bet_drawable"
+                    android:gravity="center"
+                    android:text="@string/r_x"
+                    android:textColor="@color/colorBetText"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight=".08"
+                    android:background="@drawable/textview_bet_drawable"
+                    android:gravity="center"
+                    android:text="@string/r_2"
+                    android:textColor="@color/colorBetText"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

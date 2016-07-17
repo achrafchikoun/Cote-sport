@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.ContactFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:text="Votez l'application sur GOOGLE PLAY"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="Merci de votez notre application."
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/voteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="Google Play" />
+
+</LinearLayout>

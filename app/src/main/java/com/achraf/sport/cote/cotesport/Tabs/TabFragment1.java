@@ -2,12 +2,19 @@ package com.achraf.sport.cote.cotesport.Tabs;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.achraf.sport.cote.cotesport.Others.Global;
 import com.achraf.sport.cote.cotesport.R;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class TabFragment1 extends Fragment {
@@ -20,6 +27,9 @@ public class TabFragment1 extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    RecyclerView recyclerView;
+    List<String> listeDate = new ArrayList<>();
+    List<Integer> listeDatePosition = new ArrayList<>();
 
     public TabFragment1() {
         // Required empty public constructor
@@ -38,8 +48,137 @@ public class TabFragment1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab_fragment1, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_tab_fragment1, container, false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.rvFragment1);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(container.getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+        RVAdapter rva = new RVAdapter();
+        recyclerView.setAdapter(rva);
+        return view;
+
+    }
+
+    public class RVAdapter extends RecyclerView.Adapter<RVAdapter.FootballViewHolder> {
+
+        RVAdapter() {
+        }
+
+        @Override
+        public FootballViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_items_fragment_1, parent, false);
+            FootballViewHolder pvh = new FootballViewHolder(v);
+            return pvh;
+        }
+
+        @Override
+        public void onBindViewHolder(FootballViewHolder holder, int position) {
+
+            if (!listeDate.contains(Global.listeFootball.get(position).getDateBet())) {
+
+                listeDate.add(Global.listeFootball.get(position).getDateBet());
+                listeDatePosition.add(position);
+                holder.txt_date.setVisibility(View.VISIBLE);
+
+                holder.txt_date.setText(Global.listeFootball.get(position).getDateBet());
+                holder.txt_debut.setText(Global.listeFootball.get(position).getHeureDebut());
+                holder.txt_c.setText(Global.listeFootball.get(position).getNumeroBet());
+                holder.txt_min.setText(Global.listeFootball.get(position).getMinBets());
+                holder.txt_equipe1.setText(Global.listeFootball.get(position).getEquipe1());
+                holder.txt_equipe2.setText(Global.listeFootball.get(position).getEquipe2());
+                holder.txt_1.setText(Global.listeFootball.get(position).getBet1());
+                holder.txt_x.setText(Global.listeFootball.get(position).getBetx());
+                holder.txt_2.setText(Global.listeFootball.get(position).getBet2());
+            } else if (listeDate.contains(Global.listeFootball.get(position).getDateBet())
+                    && listeDatePosition.contains(position)) {
+
+                holder.txt_date.setVisibility(View.VISIBLE);
+
+                holder.txt_date.setText(Global.listeFootball.get(position).getDateBet());
+                holder.txt_debut.setText(Global.listeFootball.get(position).getHeureDebut());
+                holder.txt_c.setText(Global.listeFootball.get(position).getNumeroBet());
+                holder.txt_min.setText(Global.listeFootball.get(position).getMinBets());
+                holder.txt_equipe1.setText(Global.listeFootball.get(position).getEquipe1());
+                holder.txt_equipe2.setText(Global.listeFootball.get(position).getEquipe2());
+                holder.txt_1.setText(Global.listeFootball.get(position).getBet1());
+                holder.txt_x.setText(Global.listeFootball.get(position).getBetx());
+                holder.txt_2.setText(Global.listeFootball.get(position).getBet2());
+
+            } else {
+                holder.txt_date.setVisibility(View.GONE);
+                holder.txt_debut.setText(Global.listeFootball.get(position).getHeureDebut());
+                holder.txt_c.setText(Global.listeFootball.get(position).getNumeroBet());
+                holder.txt_min.setText(Global.listeFootball.get(position).getMinBets());
+                holder.txt_equipe1.setText(Global.listeFootball.get(position).getEquipe1());
+                holder.txt_equipe2.setText(Global.listeFootball.get(position).getEquipe2());
+                holder.txt_1.setText(Global.listeFootball.get(position).getBet1());
+                holder.txt_x.setText(Global.listeFootball.get(position).getBetx());
+                holder.txt_2.setText(Global.listeFootball.get(position).getBet2());
+            }
+
+            //Change lines colors
+            if (position % 2 == 0) {
+                holder.cardView.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+                holder.txt_debut.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+                holder.txt_c.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+                holder.txt_min.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+                holder.txt_equipe1.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+                holder.txt_equipe2.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+                holder.txt_1.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+                holder.txt_x.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+                holder.txt_2.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+            } else {
+                holder.cardView.setBackgroundResource(R.drawable.textview_bet_drawable);
+                holder.txt_debut.setBackgroundResource(R.drawable.textview_bet_drawable);
+                holder.txt_c.setBackgroundResource(R.drawable.textview_bet_drawable);
+                holder.txt_min.setBackgroundResource(R.drawable.textview_bet_drawable);
+                holder.txt_equipe1.setBackgroundResource(R.drawable.textview_bet_drawable);
+                holder.txt_equipe2.setBackgroundResource(R.drawable.textview_bet_drawable);
+                holder.txt_1.setBackgroundResource(R.drawable.textview_bet_drawable);
+                holder.txt_x.setBackgroundResource(R.drawable.textview_bet_drawable);
+                holder.txt_2.setBackgroundResource(R.drawable.textview_bet_drawable);
+            }
+
+            //Change min match color
+            if (Global.listeFootball.get(position).getMinBets().equals("3"))
+                holder.txt_min.setBackgroundResource(R.drawable.textview_min_bet_3);
+            else if (Global.listeFootball.get(position).getMinBets().equals("2"))
+                holder.txt_min.setBackgroundResource(R.drawable.textview_min_bet_2);
+            else if (Global.listeFootball.get(position).getMinBets().equals("1"))
+                holder.txt_min.setBackgroundResource(R.drawable.textview_min_bet_1);
+
+        }
+
+        @Override
+        public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+            super.onAttachedToRecyclerView(recyclerView);
+        }
+
+        @Override
+        public int getItemCount() {
+            return Global.listeFootball.size();
+        }
+
+        public class FootballViewHolder extends RecyclerView.ViewHolder {
+            TextView txt_date, txt_debut, txt_c, txt_min, txt_equipe1, txt_equipe2, txt_1, txt_x, txt_2;
+            CardView cardView;
+
+            FootballViewHolder(View view) {
+                super(view);
+                cardView = (CardView) view.findViewById(R.id.cv);
+                txt_date = (TextView) view.findViewById(R.id.txtDate);
+                txt_debut = (TextView) view.findViewById(R.id.txtDebut);
+                txt_c = (TextView) view.findViewById(R.id.txtC);
+                txt_min = (TextView) view.findViewById(R.id.txtMin);
+                txt_equipe1 = (TextView) view.findViewById(R.id.txtEquipe1);
+                txt_equipe2 = (TextView) view.findViewById(R.id.txtEquipe2);
+                txt_1 = (TextView) view.findViewById(R.id.txt1);
+                txt_x = (TextView) view.findViewById(R.id.txtx);
+                txt_2 = (TextView) view.findViewById(R.id.txt2);
+            }
+        }
+
     }
 
 

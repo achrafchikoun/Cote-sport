@@ -3,11 +3,11 @@ package com.achraf.sport.cote.cotesport.Models;
 /**
  * Created by Achraf on 09/07/2016.
  */
-public class Match {
+public class Football {
     public String DateBet;
     public String HeureDebut;
     public String NumeroBet;
-    public int MinBets;
+    public String MinBets;
     public String HcpEq1;
     public String Equipe1;
     public String Equipe2;
@@ -38,8 +38,12 @@ public class Match {
     public String MitempsResultatFinal12;
     public String MitempsResultatFinalx2;
     public String MitempsResultatFinal22;
+    public String ScoreExact;
 
-    public Match(String bet1, String bet2, String betx, String but01, String but23, String but4Plus, String dateBet, String doubleChance12, String doubleChance1x, String doubleChancex2, String equipe1, String equipe2, String hcp1, String hcp2, String hcpEq1, String hcpEq2, String hcpx, String heureDebut, int minBets, String mitemps1, String mitemps2, String mitempsResultatFinal11, String mitempsResultatFinal12, String mitempsResultatFinal1x, String mitempsResultatFinal21, String mitempsResultatFinal22, String mitempsResultatFinal2x, String mitempsResultatFinalx1, String mitempsResultatFinalx2, String mitempsResultatFinalxx, String mitempsx, String moins, String numeroBet, String plus) {
+    public Football() {
+    }
+
+    public Football(String bet1, String bet2, String betx, String but01, String but23, String but4Plus, String dateBet, String doubleChance12, String doubleChance1x, String doubleChancex2, String equipe1, String equipe2, String hcp1, String hcp2, String hcpEq1, String hcpEq2, String hcpx, String heureDebut, String minBets, String mitemps1, String mitemps2, String mitempsResultatFinal11, String mitempsResultatFinal12, String mitempsResultatFinal1x, String mitempsResultatFinal21, String mitempsResultatFinal22, String mitempsResultatFinal2x, String mitempsResultatFinalx1, String mitempsResultatFinalx2, String mitempsResultatFinalxx, String mitempsx, String moins, String numeroBet, String plus) {
         Bet1 = bet1;
         Bet2 = bet2;
         Betx = betx;
@@ -221,11 +225,11 @@ public class Match {
         HeureDebut = heureDebut;
     }
 
-    public int getMinBets() {
+    public String getMinBets() {
         return MinBets;
     }
 
-    public void setMinBets(int minBets) {
+    public void setMinBets(String minBets) {
         MinBets = minBets;
     }
 
@@ -348,4 +352,13 @@ public class Match {
     public void setPlus(String plus) {
         this.plus = plus;
     }
+
+    public String getScoreExact() {
+        return ScoreExact;
+    }
+
+    public void setScoreExact(String scoreExact) {
+        ScoreExact = scoreExact;
+    }
+
 }

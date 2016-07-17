@@ -1,6 +1,7 @@
 package com.achraf.sport.cote.cotesport.Fragments;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -75,7 +76,7 @@ public class FootballFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_football, container, false);
+        final View view = inflater.inflate(R.layout.fragment_football, container, false);
         viewPager = (ViewPager) view.findViewById(R.id.pager);
         tabsPagerAdapter = new TabsPagerAdapter(getFragmentManager());
 
@@ -83,7 +84,33 @@ public class FootballFragment extends Fragment implements View.OnClickListener {
         viewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
-                //actionBar.setSelectedNavigationItem(position);
+                switch (position){
+                    case 0:
+                        setCurrentButtonStyle(view, R.id.btn_resultat_final);
+                        break;
+                    case 1:
+                        setCurrentButtonStyle(view, R.id.btn_double_chance);
+                        break;
+                    case 2:
+                        setCurrentButtonStyle(view, R.id.btn_hdc);
+                        break;
+                    case 3:
+                        setCurrentButtonStyle(view, R.id.btn_mi_temps);
+                        break;
+                    case 4:
+                        setCurrentButtonStyle(view, R.id.btn_moins_plus);
+                        break;
+                    case 5:
+                        setCurrentButtonStyle(view, R.id.btn_total_but);
+                        break;
+                    case 6:
+                        setCurrentButtonStyle(view, R.id.btn_score_exacte);
+                        break;
+                    case 7:
+                        setCurrentButtonStyle(view, R.id.btn_mi_temp_resultat_final);
+                        break;
+                }
+
             }
         });
 
@@ -220,7 +247,26 @@ public class FootballFragment extends Fragment implements View.OnClickListener {
     }
 
     public void setCurrentButtonStyle(View view , int id){
+        btn_tab1.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+        btn_tab1.setTextColor(Color.BLACK);
+        btn_tab2.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+        btn_tab2.setTextColor(Color.BLACK);
+        btn_tab3.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+        btn_tab3.setTextColor(Color.BLACK);
+        btn_tab4.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+        btn_tab4.setTextColor(Color.BLACK);
+        btn_tab5.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+        btn_tab5.setTextColor(Color.BLACK);
+        btn_tab6.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+        btn_tab6.setTextColor(Color.BLACK);
+        btn_tab7.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+        btn_tab7.setTextColor(Color.BLACK);
+        btn_tab8.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+        btn_tab8.setTextColor(Color.BLACK);
+
         current_btn = (Button) view.findViewById(id);
-        current_btn.setCompoundDrawables(getContext().getResources().getDrawable(R.drawable.menu_logo) , null, null, null);
+        current_btn.setTextColor(getResources().getColor(R.color.colorPrimary));
+        current_btn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_button_cote_sport
+                , 0, 0, 0);
     }
 }

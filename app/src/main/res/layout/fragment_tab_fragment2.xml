@@ -20,7 +20,7 @@
             android:textColor="@color/colorBetTitle"
             android:gravity="center"
             android:text="@string/debut"
-            android:textSize="13dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="0dp"
@@ -31,7 +31,7 @@
             android:textColor="@color/colorBetTitle"
             android:gravity="center"
             android:text="@string/c"
-            android:textSize="13dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="0dp"
@@ -42,7 +42,7 @@
             android:textColor="@color/colorBetTitle"
             android:gravity="center"
             android:text="@string/mini"
-            android:textSize="13dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="0dp"
@@ -53,7 +53,7 @@
             android:textColor="@color/colorBetTitle"
             android:gravity="center"
             android:text="@string/equipe_1"
-            android:textSize="13dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="0dp"
@@ -64,7 +64,7 @@
             android:textColor="@color/colorBetTitle"
             android:gravity="center"
             android:text="@string/equipe_2"
-            android:textSize="13dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="0dp"
@@ -75,7 +75,7 @@
             android:textColor="@color/colorBetTitle"
             android:gravity="center"
             android:text="@string/r_1x"
-            android:textSize="13dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="0dp"
@@ -86,7 +86,7 @@
             android:textColor="@color/colorBetTitle"
             android:gravity="center"
             android:text="@string/r_12"
-            android:textSize="13dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="0dp"
@@ -97,8 +97,16 @@
             android:gravity="center"
             android:text="@string/r_x2"
             android:textColor="@color/colorBetTitle"
-            android:textSize="13dp" />
+            android:textSize="15dp" />
 
     </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvFragment2"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"/>
 
 </LinearLayout>
