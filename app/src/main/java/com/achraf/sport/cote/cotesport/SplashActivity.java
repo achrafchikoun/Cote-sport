@@ -40,7 +40,7 @@ public class SplashActivity extends AppCompatActivity {
         final WebView browser = (WebView) findViewById(R.id.webView);
         browser.setVisibility(View.GONE);
         browser.getSettings().setJavaScriptEnabled(true);
-        browser.addJavascriptInterface(new MyJavaScriptInterface(SplashActivity.this), "HTMLOUT");
+        browser.addJavascriptInterface(new MyJavaScriptFootballInterface(SplashActivity.this), "HTMLOUT");
         browser.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url)
@@ -54,10 +54,10 @@ public class SplashActivity extends AppCompatActivity {
 
 
 
-    class MyJavaScriptInterface
+    class MyJavaScriptFootballInterface
     {
         Context context;
-        MyJavaScriptInterface(Context context){
+        MyJavaScriptFootballInterface(Context context){
             this.context = context;
         }
 
@@ -257,6 +257,7 @@ public class SplashActivity extends AppCompatActivity {
 
             Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
             startActivity(intent);
+            SplashActivity.this.finish();
         }
     }
 

@@ -1,6 +1,8 @@
 package com.achraf.sport.cote.cotesport;
 
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -14,12 +16,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.achraf.sport.cote.cotesport.Fragments.AutresFragment;
 import com.achraf.sport.cote.cotesport.Fragments.BasketballFragment;
 import com.achraf.sport.cote.cotesport.Fragments.ContactFragment;
 import com.achraf.sport.cote.cotesport.Fragments.FootballFragment;
 import com.achraf.sport.cote.cotesport.Fragments.VoteFragment;
+import com.achraf.sport.cote.cotesport.Models.Football;
+import com.achraf.sport.cote.cotesport.Others.Global;
+import com.achraf.sport.cote.cotesport.Others.InternetCheking;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -27,12 +41,16 @@ public class HomeActivity extends AppCompatActivity
         BasketballFragment.OnFragmentInteractionListener,
         AutresFragment.OnFragmentInteractionListener,
         ContactFragment.OnFragmentInteractionListener,
-        VoteFragment.OnFragmentInteractionListener{
+        VoteFragment.OnFragmentInteractionListener {
 
     Fragment fragment;
     Toolbar toolbar;
     FragmentTransaction transaction;
     FragmentManager manager;
+    InternetCheking internetChecker = new InternetCheking(this);
+    String lastDate = "";
+    int i = 0;
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +82,9 @@ public class HomeActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    /**** Drawer navigation start ****/
+    /****
+     * Drawer navigation start
+     ****/
     public void initDrawerNavigation() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -94,37 +114,30 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        switch(item.getItemId()){
-            case R.id.nav_football :
-                if(!(fragment instanceof  FootballFragment)){
-                    fragment = new FootballFragment();
-                    setFragmentManager(fragment);
-                }
+        switch (item.getItemId()) {
+            case R.id.nav_football:
+                setListFootball();
                 break;
 
-            case R.id.nav_basketball :
-                if(!(fragment instanceof  BasketballFragment)) {
-                    fragment = new BasketballFragment();
-                    setFragmentManager(fragment);
-                }
+            case R.id.nav_basketball:
+                fragment = new BasketballFragment();
+                setFragmentManager(fragment);
                 break;
 
-            case R.id.nav_autres :
-                if(!(fragment instanceof  AutresFragment)) {
-                    fragment = new AutresFragment();
-                    setFragmentManager(fragment);
-                }
+            case R.id.nav_autres:
+                fragment = new AutresFragment();
+                setFragmentManager(fragment);
                 break;
 
-            case R.id.nav_contact :
-                if(!(fragment instanceof ContactFragment)) {
+            case R.id.nav_contact:
+                if (!(fragment instanceof ContactFragment)) {
                     fragment = new ContactFragment();
                     setFragmentManager(fragment);
                 }
                 break;
 
-            case R.id.nav_vote :
-                if(!(fragment instanceof VoteFragment)) {
+            case R.id.nav_vote:
+                if (!(fragment instanceof VoteFragment)) {
                     fragment = new VoteFragment();
                     setFragmentManager(fragment);
                 }
@@ -138,9 +151,11 @@ public class HomeActivity extends AppCompatActivity
 
     /**** Drawer navigation end ****/
 
-    /**** Setting fragment manager ****/
+    /****
+     * Setting fragment manager
+     ****/
 
-    public void setFragmentManager(Fragment fragment){
+    public void setFragmentManager(Fragment fragment) {
         manager = getSupportFragmentManager();
         transaction = manager.beginTransaction();
         transaction.replace(R.id.container, fragment);
@@ -151,5 +166,179 @@ public class HomeActivity extends AppCompatActivity
     public void onFragmentInteraction(Uri uri) {
     }
 
-    /**** Setting fragment manager end ****/
+    /****
+     * Setting fragment manager end
+     ****/
+
+
+    public void setListFootball() {
+
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (!internetChecker.isInternetAvailable()) {
+                    Toast.makeText(HomeActivity.this, "Aucune connexion internet.", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+
+                dialog = ProgressDialog.show(HomeActivity.this, "Chargement en cours...",
+                        "Cette opération peut durer quelques secondes.", true);
+
+                final WebView browser = (WebView) findViewById(R.id.webView);
+                browser.getSettings().setJavaScriptEnabled(true);
+                browser.addJavascriptInterface(new MyJavaScriptFootballInterface(HomeActivity.this), "HTMLOUT");
+                browser.setWebViewClient(new WebViewClient() {
+                    @Override
+                    public void onPageFinished(WebView view, String url) {
+                        browser.loadUrl("javascript:window.HTMLOUT.processHTML('<html>'+document.getElementsByTagName('html')[0].innerHTML+'</html>');");
+                        if (dialog != null && dialog.isShowing()) {
+                            dialog.dismiss();
+                        }
+                    }
+                });
+                browser.loadUrl("https://www.mdjsjeux.ma/cote-sport/play");
+            }
+        });
+
+
+    }
+
+    class MyJavaScriptFootballInterface {
+        Context context;
+
+        MyJavaScriptFootballInterface(Context context) {
+            this.context = context;
+        }
+
+        @SuppressWarnings("unused")
+        @JavascriptInterface
+        public void processHTML(String html) {
+
+            Global.listeFootball.clear();
+            Document doc = Jsoup.parse(html);
+            Element response = doc.getElementById("catsport-1");
+            Elements element3 = response.getElementsByTag("tr");
+
+            for (Element e : element3) {
+
+                Football bet = new Football();
+                if (e.getElementsByAttributeValue("class", "date_games").size() > 0) {
+                    lastDate = e.getElementsByAttributeValue("class", "date_games").get(0).text();
+                }
+
+                if (e.getElementsByTag("td").size() > 1) {
+                    bet.setDateBet(lastDate);
+                    i = 2;
+                    Elements ssss3 = e.getElementsByTag("td");
+                    for (Element e2 : ssss3) {
+                        if (i == 2) {
+                            bet.HeureDebut = e2.text();
+                            i++;
+                        } else if (i == 3) {
+                            bet.NumeroBet = e2.text();
+                            i++;
+                        } else if (i == 4) {
+                            bet.MinBets = e2.text();
+                            i++;
+                        } else if (i == 5) {
+                            bet.HcpEq1 = e2.text();
+                            i++;
+                        } else if (i == 6) {
+                            bet.Equipe1 = e2.text();
+                            i++;
+                        } else if (i == 7) {
+                            bet.Equipe2 = e2.text();
+                            i++;
+                        } else if (i == 8) {
+                            bet.HcpEq2 = e2.text();
+                            i++;
+                        } else if (i == 9) {
+                            bet.Bet1 = e2.text();
+                            i++;
+                        } else if (i == 10) {
+                            bet.Betx = e2.text();
+                            i++;
+                        } else if (i == 11) {
+                            bet.Bet2 = e2.text();
+                            i++;
+                        } else if (i == 12) {
+                            bet.DoubleChance1x = e2.text();
+                            i++;
+                        } else if (i == 13) {
+                            bet.DoubleChance12 = e2.text();
+                            i++;
+                        } else if (i == 14) {
+                            bet.DoubleChancex2 = e2.text();
+                            i++;
+                        } else if (i == 15) {
+                            bet.Hcp1 = e2.text();
+                            i++;
+                        } else if (i == 16) {
+                            bet.Hcpx = e2.text();
+                            i++;
+                        } else if (i == 17) {
+                            bet.Hcp2 = e2.text();
+                            i++;
+                        } else if (i == 18) {
+                            bet.Mitemps1 = e2.text();
+                            i++;
+                        } else if (i == 19) {
+                            bet.Mitempsx = e2.text();
+                            i++;
+                        } else if (i == 20) {
+                            bet.Mitemps2 = e2.text();
+                            i++;
+                        } else if (i == 21) {
+                            bet.moins = e2.text();
+                            i++;
+                        } else if (i == 22) {
+                            bet.plus = e2.text();
+                            i++;
+                        } else if (i == 23) {
+                            bet.But01 = e2.text();
+                            i++;
+                        } else if (i == 24) {
+                            bet.But23 = e2.text();
+                            i++;
+                        } else if (i == 25) {
+                            bet.But4Plus = e2.text();
+                            i++;
+                        } else if (i == 26) {
+                            bet.MitempsResultatFinal11 = e2.text();
+                            i++;
+                        } else if (i == 27) {
+                            bet.MitempsResultatFinalx1 = e2.text();
+                            i++;
+                        } else if (i == 28) {
+                            bet.MitempsResultatFinal21 = e2.text();
+                            i++;
+                        } else if (i == 29) {
+                            bet.MitempsResultatFinal1x = e2.text();
+                            i++;
+                        } else if (i == 30) {
+                            bet.MitempsResultatFinalxx = e2.text();
+                            i++;
+                        } else if (i == 31) {
+                            bet.MitempsResultatFinal2x = e2.text();
+                            i++;
+                        } else if (i == 32) {
+                            bet.MitempsResultatFinal12 = e2.text();
+                            i++;
+                        } else if (i == 33) {
+                            bet.MitempsResultatFinalx2 = e2.text();
+                            i++;
+                        } else if (i == 34) {
+                            bet.MitempsResultatFinal22 = e2.text();
+                            i++;
+                        } else if (i == 35) {
+                            bet.ScoreExact = e2.text();
+                            i++;
+                        }
+                    }
+                    Global.listeFootball.add(bet);
+                }
+            }
+        }
+    }
 }
