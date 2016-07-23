@@ -22,7 +22,7 @@
                 android:text="@string/debut"
                 android:textStyle="bold"
                 android:textColor="@color/colorBetTitle"
-                android:textSize="15dp" />
+                android:textSize="14dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,55 +38,55 @@
                     android:gravity="center"
                     android:text="@string/debut"
                     android:textColor="@color/colorBetText"
-                    android:textSize="14dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtC"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="1dp"
-                    android:layout_weight=".08"
+                    android:layout_weight=".07"
                     android:background="@drawable/textview_bet_drawable"
                     android:gravity="center"
                     android:text="@string/c"
                     android:textColor="@color/colorBetText"
-                    android:textSize="14dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtMin"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="1dp"
-                    android:layout_weight=".08"
+                    android:layout_weight=".07"
                     android:background="@drawable/textview_bet_drawable"
                     android:gravity="center"
                     android:text="@string/mini"
-                    android:textColor="@color/colorBetText"
-                    android:textSize="14dp" />
+                    android:textColor="@color/colorWhite"
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtEquipe1"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="1dp"
-                    android:layout_weight=".26"
+                    android:layout_weight=".27"
                     android:background="@drawable/textview_bet_drawable"
                     android:gravity="center"
                     android:text="@string/equipe_1"
                     android:textColor="@color/colorBetText"
-                    android:textSize="14dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtEquipe2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="1dp"
-                    android:layout_weight=".26"
+                    android:layout_weight=".27"
                     android:background="@drawable/textview_bet_drawable"
                     android:gravity="center"
                     android:text="@string/equipe_2"
                     android:textColor="@color/colorBetText"
-                    android:textSize="14dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txt1x"
@@ -98,7 +98,7 @@
                     android:gravity="center"
                     android:text="@string/r_1x"
                     android:textColor="@color/colorBetText"
-                    android:textSize="14dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txt12"
@@ -110,7 +110,7 @@
                     android:gravity="center"
                     android:text="@string/r_12"
                     android:textColor="@color/colorBetText"
-                    android:textSize="14dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtx2"
@@ -122,7 +122,7 @@
                     android:gravity="center"
                     android:text="@string/r_x2"
                     android:textColor="@color/colorBetText"
-                    android:textSize="14dp" />
+                    android:textSize="10dp" />
 
             </LinearLayout>
         </LinearLayout>

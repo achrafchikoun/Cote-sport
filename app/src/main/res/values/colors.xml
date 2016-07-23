@@ -7,9 +7,10 @@
     <color name="colorBackground">#424242</color>
     <color name="colorItemDrawer">#ffffff</color>
     <color name="colorBetTitle">#ffffff</color>
+    <color name="colorWhite">#ffffff</color>
     <color name="colorNavigationHeader">#7f7f7f</color>
     <color name="colorBetText">#696969</color>
-    <color name="colorMin1">#696969</color>
+    <color name="colorMin1">#d63d4c</color>
     <color name="colorMin2">#5798e2</color>
-    <color name="colorMin3">#d63d4c</color>
+    <color name="colorMin3">#6dbb6f</color>
 </resources>

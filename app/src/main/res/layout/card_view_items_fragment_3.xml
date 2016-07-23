@@ -22,7 +22,7 @@
                 android:text="@string/debut"
                 android:textStyle="bold"
                 android:textColor="@color/colorBetTitle"
-                android:textSize="15dp" />
+                android:textSize="14dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,79 +38,81 @@
                     android:textColor="@color/colorBetText"
                     android:gravity="center"
                     android:text="@string/debut_2"
-                    android:textSize="15dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtC"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
-                    android:layout_weight=".08"
+                    android:layout_weight=".07"
                     android:layout_marginLeft="1dp"
                     android:background="@drawable/textview_bet_drawable"
                     android:textColor="@color/colorBetText"
                     android:gravity="center"
                     android:text="@string/c"
-                    android:textSize="15dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtMin"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
-                    android:layout_weight=".08"
+                    android:layout_weight=".07"
                     android:layout_marginLeft="1dp"
                     android:background="@drawable/textview_bet_drawable"
-                    android:textColor="@color/colorBetText"
+                    android:textColor="@color/colorWhite"
                     android:gravity="center"
                     android:text="@string/min_2"
-                    android:textSize="15dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtHdc1"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
-                    android:layout_weight=".08"
+                    android:layout_weight=".07"
                     android:layout_marginLeft="1dp"
                     android:background="@drawable/textview_bet_drawable"
                     android:textColor="@color/colorBetText"
                     android:gravity="center"
                     android:text="@string/hdc_1"
-                    android:textSize="15dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtEquipe1"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
-                    android:layout_weight=".26"
+                    android:layout_weight=".28"
                     android:layout_marginLeft="1dp"
                     android:background="@drawable/textview_bet_drawable"
                     android:textColor="@color/colorBetText"
                     android:gravity="center"
                     android:text="@string/equipe_1"
-                    android:textSize="15dp" />
+                    android:ellipsize="end"
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtEquipe2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
-                    android:layout_weight=".26"
+                    android:layout_weight=".28"
                     android:layout_marginLeft="1dp"
                     android:background="@drawable/textview_bet_drawable"
                     android:textColor="@color/colorBetText"
                     android:gravity="center"
                     android:text="@string/equipe_2"
-                    android:textSize="15dp" />
+                    android:ellipsize="end"
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtHdc2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
-                    android:layout_weight=".08"
+                    android:layout_weight=".07"
                     android:layout_marginLeft="1dp"
                     android:background="@drawable/textview_bet_drawable"
                     android:textColor="@color/colorBetText"
                     android:gravity="center"
                     android:text="@string/hdc_2"
-                    android:textSize="15dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txt1"
@@ -122,7 +124,7 @@
                     android:textColor="@color/colorBetText"
                     android:gravity="center"
                     android:text="@string/r_1"
-                    android:textSize="15dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txtx"
@@ -134,7 +136,7 @@
                     android:textColor="@color/colorBetText"
                     android:gravity="center"
                     android:text="@string/r_x"
-                    android:textSize="15dp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/txt2"
@@ -146,7 +148,7 @@
                     android:gravity="center"
                     android:text="@string/r_2"
                     android:textColor="@color/colorBetText"
-                    android:textSize="15dp" />
+                    android:textSize="10dp" />
 
             </LinearLayout>
         </LinearLayout>
