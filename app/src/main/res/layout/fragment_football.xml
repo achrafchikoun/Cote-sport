@@ -58,14 +58,14 @@
             android:id="@+id/btn_mi_temps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".50"
+            android:layout_weight=".33"
             android:text="@string/mi_temps"/>
 
         <Button
             android:id="@+id/btn_moins_plus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".50"
+            android:layout_weight=".33"
             android:text="@string/moins_plus"/>
 
     </LinearLayout>
@@ -81,30 +81,14 @@
             android:id="@+id/btn_total_but"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".50"
+            android:layout_weight=".4"
             android:text="@string/total_buts"/>
-
-        <Button
-            android:id="@+id/btn_score_exacte"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".50"
-            android:text="@string/score_exact"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp">
 
         <Button
             android:id="@+id/btn_mi_temp_resultat_final"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".50"
+            android:layout_weight=".6"
             android:text="@string/mi_temps_resultat_final"/>
 
     </LinearLayout>
