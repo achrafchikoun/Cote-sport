@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "413264657412",
+    "project_id": "vast-arena-137615"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413264657412:android:c24e3a0b2ede9b10",
+        "android_client_info": {
+          "package_name": "com.cotesport.maroc.toto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413264657412-h6o4ca9q3hmh2cptbrqsavbjaeju2muc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cotesport.maroc.toto",
+            "certificate_hash": "C782349973018E17635EA71F4930150F51050870"
+          }
+        },
+        {
+          "client_id": "413264657412-82rm0lvpc6sk5v6oreu171mkik4qvk95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRWOdtK4Cs2rckuVMbBZPn7u4LubsDtjk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
