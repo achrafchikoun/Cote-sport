@@ -1,4 +1,4 @@
-package com.cotesport.maroc.toto.Tabs;
+package com.cotesport.maroc.programme.Tabs;
 
 import android.app.Application;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.cotesport.maroc.toto.Others.Global;
-import com.cotesport.maroc.toto.R;
+import com.cotesport.maroc.programme.Others.Global;
+import com.cotesport.maroc.programme.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;

@@ -1,27 +1,25 @@
-package com.cotesport.maroc.toto.Fragments;
+package com.cotesport.maroc.programme.Fragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
-import com.cotesport.maroc.toto.R;
+import com.cotesport.maroc.programme.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link VoteFragment.OnFragmentInteractionListener} interface
+ * {@link BasketballFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link VoteFragment#newInstance} factory method to
+ * Use the {@link BasketballFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class VoteFragment extends Fragment implements View.OnClickListener{
+public class BasketballFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,11 +29,9 @@ public class VoteFragment extends Fragment implements View.OnClickListener{
     private String mParam1;
     private String mParam2;
 
-    Button vote_button;
-
     private OnFragmentInteractionListener mListener;
 
-    public VoteFragment() {
+    public BasketballFragment() {
         // Required empty public constructor
     }
 
@@ -45,11 +41,11 @@ public class VoteFragment extends Fragment implements View.OnClickListener{
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment VoteFragment.
+     * @return A new instance of fragment BasketballFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static VoteFragment newInstance(String param1, String param2) {
-        VoteFragment fragment = new VoteFragment();
+    public static BasketballFragment newInstance(String param1, String param2) {
+        BasketballFragment fragment = new BasketballFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -69,10 +65,8 @@ public class VoteFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_vote, container, false);
-        vote_button = (Button) view.findViewById(R.id.voteButton);
-        vote_button.setOnClickListener(this);
-        return view;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_basketball, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -112,14 +106,5 @@ public class VoteFragment extends Fragment implements View.OnClickListener{
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-    }
-
-    public void onClick(View view){
-        switch(view.getId()){
-            case R.id.voteButton:
-                String appPackageName = view.getContext().getPackageName();
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
-                break;
-        }
     }
 }

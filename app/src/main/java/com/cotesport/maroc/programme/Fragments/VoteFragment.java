@@ -1,25 +1,27 @@
-package com.cotesport.maroc.toto.Fragments;
+package com.cotesport.maroc.programme.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-import com.cotesport.maroc.toto.R;
+import com.cotesport.maroc.programme.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link AutresFragment.OnFragmentInteractionListener} interface
+ * {@link VoteFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link AutresFragment#newInstance} factory method to
+ * Use the {@link VoteFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AutresFragment extends Fragment {
+public class VoteFragment extends Fragment implements View.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,9 +31,11 @@ public class AutresFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    Button vote_button;
+
     private OnFragmentInteractionListener mListener;
 
-    public AutresFragment() {
+    public VoteFragment() {
         // Required empty public constructor
     }
 
@@ -41,11 +45,11 @@ public class AutresFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AutresFragment.
+     * @return A new instance of fragment VoteFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AutresFragment newInstance(String param1, String param2) {
-        AutresFragment fragment = new AutresFragment();
+    public static VoteFragment newInstance(String param1, String param2) {
+        VoteFragment fragment = new VoteFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,8 +69,10 @@ public class AutresFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_autres, container, false);
+        View view = inflater.inflate(R.layout.fragment_vote, container, false);
+        vote_button = (Button) view.findViewById(R.id.voteButton);
+        vote_button.setOnClickListener(this);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -106,5 +112,14 @@ public class AutresFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public void onClick(View view){
+        switch(view.getId()){
+            case R.id.voteButton:
+                String appPackageName = view.getContext().getPackageName();
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                break;
+        }
     }
 }

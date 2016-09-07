@@ -1,19 +1,30 @@
-package com.cotesport.maroc.toto;
+package com.cotesport.maroc.programme;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
-import com.cotesport.maroc.toto.Models.Football;
-import com.cotesport.maroc.toto.Others.Global;
-import com.cotesport.maroc.toto.Others.InternetCheking;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.cotesport.maroc.programme.Models.Football;
+import com.cotesport.maroc.programme.Others.Global;
+import com.cotesport.maroc.programme.Others.InternetCheking;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -22,15 +33,15 @@ import org.jsoup.select.Elements;
 public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = "SplashActivity";
+    private String API_URL = "http://achrafchikoun.com/cote_sport_api/Match/getMatchs";
     InternetCheking internet = new InternetCheking(this);
+    Football bet;
     String lastDate = "";
-    int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
 
 
         if( !internet.isInternetAvailable() )
@@ -39,7 +50,9 @@ public class SplashActivity extends AppCompatActivity {
             finish();
         }
 
-        final WebView browser = (WebView) findViewById(R.id.webView);
+        getAllMatchs();
+
+        /*final WebView browser = (WebView) findViewById(R.id.webView);
         browser.setVisibility(View.GONE);
         browser.getSettings().setJavaScriptEnabled(true);
         browser.addJavascriptInterface(new MyJavaScriptFootballInterface(SplashActivity.this), "HTMLOUT");
@@ -50,13 +63,74 @@ public class SplashActivity extends AppCompatActivity {
                 browser.loadUrl("javascript:window.HTMLOUT.processHTML('<html>'+document.getElementsByTagName('html')[0].innerHTML+'</html>');");
             }
         });
-        browser.loadUrl("https://www.mdjsjeux.ma/cote-sport/play");
+        browser.loadUrl("https://www.mdjsjeux.ma/cote-sport/play");*/
 
+    }
+
+    private void getAllMatchs() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                API_URL,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try
+                        {
+                            ((Global) getApplication()).getListeFootball().clear();
+                            for (int i = 0; i < response.length(); i++)
+                            {
+                                bet = new Football();
+                                bet.setDateBet(response.getJSONObject(i).getString("DateBet"));
+                                bet.setHeureDebut(response.getJSONObject(i).getString("HeureDebut"));
+                                bet.setNumeroBet(response.getJSONObject(i).getString("NumeroBet"));
+                                bet.setMinBets(response.getJSONObject(i).getString("MinBets"));
+                                bet.setHdcp(response.getJSONObject(i).getString("Hdcp"));
+                                bet.setEquipe1(response.getJSONObject(i).getString("Equipe1"));
+                                bet.setEquipe2(response.getJSONObject(i).getString("Equipe2"));
+                                bet.setBet1(response.getJSONObject(i).getString("Bet1"));
+                                bet.setBetx(response.getJSONObject(i).getString("Betx"));
+                                bet.setBet2(response.getJSONObject(i).getString("Bet2"));
+                                bet.setDoubleChance1x(response.getJSONObject(i).getString("DoubleChance1x"));
+                                bet.setDoubleChance12(response.getJSONObject(i).getString("DoubleChance12"));
+                                bet.setDoubleChancex2(response.getJSONObject(i).getString("DoubleChancex2"));
+                                bet.setHcp1(response.getJSONObject(i).getString("Hcp1"));
+                                bet.setHcpx(response.getJSONObject(i).getString("Hcpx"));
+                                bet.setHcp2(response.getJSONObject(i).getString("Hcp2"));
+                                bet.setMitemps1(response.getJSONObject(i).getString("Mitemps1"));
+                                bet.setMitempsx(response.getJSONObject(i).getString("Mitempsx"));
+                                bet.setMitemps2(response.getJSONObject(i).getString("Mitemps2"));
+                                bet.setMoins(response.getJSONObject(i).getString("moins"));
+                                bet.setPlus(response.getJSONObject(i).getString("plus"));
+
+                                bet.setBut01(response.getJSONObject(i).getString("But01"));
+                                bet.setBut23(response.getJSONObject(i).getString("But23"));
+                                bet.setBut4Plus(response.getJSONObject(i).getString("But4Plus"));
+
+                                ((Global) getApplication()).getListeFootball().add(bet);
+                            }
+
+                            Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                            SplashActivity.this.finish();
+                        }
+                        catch(Exception ex)
+                        {
+                            Toast.makeText(SplashActivity.this, ex.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(SplashActivity.this, error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
     }
 
 
 
-    class MyJavaScriptFootballInterface
+    /*class MyJavaScriptFootballInterface
     {
         Context context;
         MyJavaScriptFootballInterface(Context context){
@@ -262,7 +336,7 @@ public class SplashActivity extends AppCompatActivity {
             startActivity(intent);
             SplashActivity.this.finish();
         }
-    }
+    }*/
 
     /*public class checkInternet extends AsyncTask<Void, Void, Void> {
 

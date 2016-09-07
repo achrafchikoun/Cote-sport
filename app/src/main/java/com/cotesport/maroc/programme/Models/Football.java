@@ -1,4 +1,4 @@
-package com.cotesport.maroc.toto.Models;
+package com.cotesport.maroc.programme.Models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -11,10 +11,9 @@ public class Football implements Parcelable {
     public String HeureDebut;
     public String NumeroBet;
     public String MinBets;
-    public String HcpEq1;
+    public String Hdcp;
     public String Equipe1;
     public String Equipe2;
-    public String HcpEq2;
     public String Bet1;
     public String Betx;
     public String Bet2;
@@ -32,21 +31,11 @@ public class Football implements Parcelable {
     public String But01;
     public String But23;
     public String But4Plus;
-    public String MitempsResultatFinal11;
-    public String MitempsResultatFinalx1;
-    public String MitempsResultatFinal21;
-    public String MitempsResultatFinal1x;
-    public String MitempsResultatFinalxx;
-    public String MitempsResultatFinal2x;
-    public String MitempsResultatFinal12;
-    public String MitempsResultatFinalx2;
-    public String MitempsResultatFinal22;
-    public String ScoreExact;
 
     public Football() {
     }
 
-    public Football(String bet1, String bet2, String betx, String but01, String but23, String but4Plus, String dateBet, String doubleChance12, String doubleChance1x, String doubleChancex2, String equipe1, String equipe2, String hcp1, String hcp2, String hcpEq1, String hcpEq2, String hcpx, String heureDebut, String minBets, String mitemps1, String mitemps2, String mitempsResultatFinal11, String mitempsResultatFinal12, String mitempsResultatFinal1x, String mitempsResultatFinal21, String mitempsResultatFinal22, String mitempsResultatFinal2x, String mitempsResultatFinalx1, String mitempsResultatFinalx2, String mitempsResultatFinalxx, String mitempsx, String moins, String numeroBet, String plus) {
+    public Football(String bet1, String bet2, String betx, String but01, String but23, String but4Plus, String dateBet, String doubleChance12, String doubleChance1x, String doubleChancex2, String equipe1, String equipe2, String hcp1, String hcp2, String Hdcp, String hcpx, String heureDebut, String minBets, String mitemps1, String mitemps2, String mitempsResultatFinal11, String mitempsResultatFinal12, String mitempsResultatFinal1x, String mitempsResultatFinal21, String mitempsResultatFinal22, String mitempsResultatFinal2x, String mitempsResultatFinalx1, String mitempsResultatFinalx2, String mitempsResultatFinalxx, String mitempsx, String moins, String numeroBet, String plus) {
         Bet1 = bet1;
         Bet2 = bet2;
         Betx = betx;
@@ -61,22 +50,12 @@ public class Football implements Parcelable {
         Equipe2 = equipe2;
         Hcp1 = hcp1;
         Hcp2 = hcp2;
-        HcpEq1 = hcpEq1;
-        HcpEq2 = hcpEq2;
+        Hdcp = Hdcp;
         Hcpx = hcpx;
         HeureDebut = heureDebut;
         MinBets = minBets;
         Mitemps1 = mitemps1;
         Mitemps2 = mitemps2;
-        MitempsResultatFinal11 = mitempsResultatFinal11;
-        MitempsResultatFinal12 = mitempsResultatFinal12;
-        MitempsResultatFinal1x = mitempsResultatFinal1x;
-        MitempsResultatFinal21 = mitempsResultatFinal21;
-        MitempsResultatFinal22 = mitempsResultatFinal22;
-        MitempsResultatFinal2x = mitempsResultatFinal2x;
-        MitempsResultatFinalx1 = mitempsResultatFinalx1;
-        MitempsResultatFinalx2 = mitempsResultatFinalx2;
-        MitempsResultatFinalxx = mitempsResultatFinalxx;
         Mitempsx = mitempsx;
         this.moins = moins;
         NumeroBet = numeroBet;
@@ -88,10 +67,9 @@ public class Football implements Parcelable {
         HeureDebut = in.readString();
         NumeroBet = in.readString();
         MinBets = in.readString();
-        HcpEq1 = in.readString();
+        Hdcp = in.readString();
         Equipe1 = in.readString();
         Equipe2 = in.readString();
-        HcpEq2 = in.readString();
         Bet1 = in.readString();
         Betx = in.readString();
         Bet2 = in.readString();
@@ -109,16 +87,6 @@ public class Football implements Parcelable {
         But01 = in.readString();
         But23 = in.readString();
         But4Plus = in.readString();
-        MitempsResultatFinal11 = in.readString();
-        MitempsResultatFinalx1 = in.readString();
-        MitempsResultatFinal21 = in.readString();
-        MitempsResultatFinal1x = in.readString();
-        MitempsResultatFinalxx = in.readString();
-        MitempsResultatFinal2x = in.readString();
-        MitempsResultatFinal12 = in.readString();
-        MitempsResultatFinalx2 = in.readString();
-        MitempsResultatFinal22 = in.readString();
-        ScoreExact = in.readString();
     }
 
     public static final Creator<Football> CREATOR = new Creator<Football>() {
@@ -246,20 +214,12 @@ public class Football implements Parcelable {
         Hcp2 = hcp2;
     }
 
-    public String getHcpEq1() {
-        return HcpEq1;
+    public String getHdcp() {
+        return Hdcp;
     }
 
-    public void setHcpEq1(String hcpEq1) {
-        HcpEq1 = hcpEq1;
-    }
-
-    public String getHcpEq2() {
-        return HcpEq2;
-    }
-
-    public void setHcpEq2(String hcpEq2) {
-        HcpEq2 = hcpEq2;
+    public void setHdcp(String Hdcp) {
+        Hdcp = Hdcp;
     }
 
     public String getHcpx() {
@@ -302,78 +262,6 @@ public class Football implements Parcelable {
         Mitemps2 = mitemps2;
     }
 
-    public String getMitempsResultatFinal11() {
-        return MitempsResultatFinal11;
-    }
-
-    public void setMitempsResultatFinal11(String mitempsResultatFinal11) {
-        MitempsResultatFinal11 = mitempsResultatFinal11;
-    }
-
-    public String getMitempsResultatFinal12() {
-        return MitempsResultatFinal12;
-    }
-
-    public void setMitempsResultatFinal12(String mitempsResultatFinal12) {
-        MitempsResultatFinal12 = mitempsResultatFinal12;
-    }
-
-    public String getMitempsResultatFinal1x() {
-        return MitempsResultatFinal1x;
-    }
-
-    public void setMitempsResultatFinal1x(String mitempsResultatFinal1x) {
-        MitempsResultatFinal1x = mitempsResultatFinal1x;
-    }
-
-    public String getMitempsResultatFinal21() {
-        return MitempsResultatFinal21;
-    }
-
-    public void setMitempsResultatFinal21(String mitempsResultatFinal21) {
-        MitempsResultatFinal21 = mitempsResultatFinal21;
-    }
-
-    public String getMitempsResultatFinal22() {
-        return MitempsResultatFinal22;
-    }
-
-    public void setMitempsResultatFinal22(String mitempsResultatFinal22) {
-        MitempsResultatFinal22 = mitempsResultatFinal22;
-    }
-
-    public String getMitempsResultatFinal2x() {
-        return MitempsResultatFinal2x;
-    }
-
-    public void setMitempsResultatFinal2x(String mitempsResultatFinal2x) {
-        MitempsResultatFinal2x = mitempsResultatFinal2x;
-    }
-
-    public String getMitempsResultatFinalx1() {
-        return MitempsResultatFinalx1;
-    }
-
-    public void setMitempsResultatFinalx1(String mitempsResultatFinalx1) {
-        MitempsResultatFinalx1 = mitempsResultatFinalx1;
-    }
-
-    public String getMitempsResultatFinalx2() {
-        return MitempsResultatFinalx2;
-    }
-
-    public void setMitempsResultatFinalx2(String mitempsResultatFinalx2) {
-        MitempsResultatFinalx2 = mitempsResultatFinalx2;
-    }
-
-    public String getMitempsResultatFinalxx() {
-        return MitempsResultatFinalxx;
-    }
-
-    public void setMitempsResultatFinalxx(String mitempsResultatFinalxx) {
-        MitempsResultatFinalxx = mitempsResultatFinalxx;
-    }
-
     public String getMitempsx() {
         return Mitempsx;
     }
@@ -406,14 +294,6 @@ public class Football implements Parcelable {
         this.plus = plus;
     }
 
-    public String getScoreExact() {
-        return ScoreExact;
-    }
-
-    public void setScoreExact(String scoreExact) {
-        ScoreExact = scoreExact;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -425,10 +305,9 @@ public class Football implements Parcelable {
         dest.writeString(HeureDebut);
         dest.writeString(NumeroBet);
         dest.writeString(MinBets);
-        dest.writeString(HcpEq1);
+        dest.writeString(Hdcp);
         dest.writeString(Equipe1);
         dest.writeString(Equipe2);
-        dest.writeString(HcpEq2);
         dest.writeString(Bet1);
         dest.writeString(Betx);
         dest.writeString(Bet2);
@@ -446,15 +325,5 @@ public class Football implements Parcelable {
         dest.writeString(But01);
         dest.writeString(But23);
         dest.writeString(But4Plus);
-        dest.writeString(MitempsResultatFinal11);
-        dest.writeString(MitempsResultatFinalx1);
-        dest.writeString(MitempsResultatFinal21);
-        dest.writeString(MitempsResultatFinal1x);
-        dest.writeString(MitempsResultatFinalxx);
-        dest.writeString(MitempsResultatFinal2x);
-        dest.writeString(MitempsResultatFinal12);
-        dest.writeString(MitempsResultatFinalx2);
-        dest.writeString(MitempsResultatFinal22);
-        dest.writeString(ScoreExact);
     }
 }

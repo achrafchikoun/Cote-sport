@@ -1,4 +1,4 @@
-package com.cotesport.maroc.toto.Tabs;
+package com.cotesport.maroc.programme.Tabs;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.cotesport.maroc.toto.Others.Global;
-import com.cotesport.maroc.toto.R;
+import com.cotesport.maroc.programme.Others.Global;
+import com.cotesport.maroc.programme.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -19,7 +19,7 @@ import com.google.android.gms.ads.MobileAds;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabFragment5 extends Fragment {
+public class TabFragment4 extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -33,7 +33,8 @@ public class TabFragment5 extends Fragment {
     List<String> listeDate = new ArrayList<>();
     List<Integer> listeDatePosition = new ArrayList<>();
 
-    public TabFragment5() {
+
+    public TabFragment4() {
         // Required empty public constructor
     }
 
@@ -43,11 +44,11 @@ public class TabFragment5 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TabFragment5.
+     * @return A new instance of fragment TabFragment4.
      */
     // TODO: Rename and change types and number of parameters
-    public static TabFragment5 newInstance(String param1, String param2) {
-        TabFragment5 fragment = new TabFragment5();
+    public static TabFragment4 newInstance(String param1, String param2) {
+        TabFragment4 fragment = new TabFragment4();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -72,14 +73,14 @@ public class TabFragment5 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tab_fragment5, container, false);
+        View view = inflater.inflate(R.layout.fragment_tab_fragment4, container, false);
 
         MobileAds.initialize(getActivity().getApplicationContext(), "ca-app-pub-6158022415806589/3630392558");
         AdView mAdView = (AdView) view.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.rvFragment5);
+        recyclerView = (RecyclerView) view.findViewById(R.id.rvFragment4);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -95,7 +96,7 @@ public class TabFragment5 extends Fragment {
 
         @Override
         public FootballViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_items_fragment_5, parent, false);
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_items_fragment_4, parent, false);
             FootballViewHolder pvh = new FootballViewHolder(v);
             return pvh;
         }
@@ -115,8 +116,9 @@ public class TabFragment5 extends Fragment {
                 holder.txt_min.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMinBets());
                 holder.txt_equipe1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe1());
                 holder.txt_equipe2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe2());
-                holder.txt_moins.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMoins());
-                holder.txt_plus.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getPlus());
+                holder.txt_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMitemps1());
+                holder.txt_x.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMitempsx());
+                holder.txt_2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMitemps2());
             } else if (listeDate.contains(((Global) getActivity().getApplication()).getListeFootball().get(position).getDateBet())
                     && listeDatePosition.contains(position)) {
 
@@ -128,8 +130,9 @@ public class TabFragment5 extends Fragment {
                 holder.txt_min.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMinBets());
                 holder.txt_equipe1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe1());
                 holder.txt_equipe2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe2());
-                holder.txt_moins.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMoins());
-                holder.txt_plus.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getPlus());
+                holder.txt_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMitemps1());
+                holder.txt_x.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMitempsx());
+                holder.txt_2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMitemps2());
 
             } else {
                 holder.txt_date.setVisibility(View.GONE);
@@ -138,8 +141,9 @@ public class TabFragment5 extends Fragment {
                 holder.txt_min.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMinBets());
                 holder.txt_equipe1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe1());
                 holder.txt_equipe2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe2());
-                holder.txt_moins.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMoins());
-                holder.txt_plus.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getPlus());
+                holder.txt_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMitemps1());
+                holder.txt_x.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMitempsx());
+                holder.txt_2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMitemps2());
             }
 
             //Change lines colors
@@ -150,8 +154,9 @@ public class TabFragment5 extends Fragment {
                 holder.txt_min.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
                 holder.txt_equipe1.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
                 holder.txt_equipe2.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
-                holder.txt_moins.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
-                holder.txt_plus.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+                holder.txt_1.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+                holder.txt_x.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
+                holder.txt_2.setBackgroundResource(R.drawable.textview_bet_drawable_paire);
             } else {
                 //holder.cardView.setBackgroundResource(R.drawable.textview_bet_drawable);
                 holder.txt_debut.setBackgroundResource(R.drawable.textview_bet_drawable);
@@ -159,8 +164,9 @@ public class TabFragment5 extends Fragment {
                 holder.txt_min.setBackgroundResource(R.drawable.textview_bet_drawable);
                 holder.txt_equipe1.setBackgroundResource(R.drawable.textview_bet_drawable);
                 holder.txt_equipe2.setBackgroundResource(R.drawable.textview_bet_drawable);
-                holder.txt_moins.setBackgroundResource(R.drawable.textview_bet_drawable);
-                holder.txt_plus.setBackgroundResource(R.drawable.textview_bet_drawable);
+                holder.txt_1.setBackgroundResource(R.drawable.textview_bet_drawable);
+                holder.txt_x.setBackgroundResource(R.drawable.textview_bet_drawable);
+                holder.txt_2.setBackgroundResource(R.drawable.textview_bet_drawable);
             }
 
             //Change min match color
@@ -184,20 +190,21 @@ public class TabFragment5 extends Fragment {
         }
 
         public class FootballViewHolder extends RecyclerView.ViewHolder {
-            TextView txt_date, txt_debut, txt_c, txt_min, txt_equipe1, txt_equipe2, txt_moins, txt_plus;
+            TextView txt_date, txt_debut, txt_c, txt_min, txt_equipe1, txt_equipe2, txt_1, txt_x, txt_2;
             CardView cardView;
 
             FootballViewHolder(View view) {
                 super(view);
-                cardView = (CardView) view.findViewById(R.id.cv5);
+                cardView = (CardView) view.findViewById(R.id.cv4);
                 txt_date = (TextView) view.findViewById(R.id.txtDate);
                 txt_debut = (TextView) view.findViewById(R.id.txtDebut);
                 txt_c = (TextView) view.findViewById(R.id.txtC);
                 txt_min = (TextView) view.findViewById(R.id.txtMin);
                 txt_equipe1 = (TextView) view.findViewById(R.id.txtEquipe1);
                 txt_equipe2 = (TextView) view.findViewById(R.id.txtEquipe2);
-                txt_moins = (TextView) view.findViewById(R.id.txtMoins);
-                txt_plus = (TextView) view.findViewById(R.id.txtPlus);
+                txt_1 = (TextView) view.findViewById(R.id.txt1);
+                txt_x = (TextView) view.findViewById(R.id.txtx);
+                txt_2 = (TextView) view.findViewById(R.id.txt2);
             }
         }
 

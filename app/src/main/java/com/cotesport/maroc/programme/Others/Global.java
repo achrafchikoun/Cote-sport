@@ -1,8 +1,8 @@
-package com.cotesport.maroc.toto.Others;
+package com.cotesport.maroc.programme.Others;
 
 import android.app.Application;
 
-import com.cotesport.maroc.toto.Models.Football;
+import com.cotesport.maroc.programme.Models.Football;
 
 import java.util.ArrayList;
 import java.util.List;

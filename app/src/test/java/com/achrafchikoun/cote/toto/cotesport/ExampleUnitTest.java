@@ -1,4 +1,4 @@
-package com.achrafchikoun.cote.toto.cotesport;
+package com.achrafchikoun.cote.programme.cotesport;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.cotesport.maroc.toto.Fragments;
+package com.cotesport.maroc.programme.Fragments;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -13,14 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.cotesport.maroc.toto.R;
-import com.cotesport.maroc.toto.Tabs.TabFragment1;
-import com.cotesport.maroc.toto.Tabs.TabFragment2;
-import com.cotesport.maroc.toto.Tabs.TabFragment3;
-import com.cotesport.maroc.toto.Tabs.TabFragment4;
-import com.cotesport.maroc.toto.Tabs.TabFragment5;
-import com.cotesport.maroc.toto.Tabs.TabFragment6;
-import com.cotesport.maroc.toto.Tabs.TabFragment8;
+import com.cotesport.maroc.programme.R;
+import com.cotesport.maroc.programme.Tabs.TabFragment1;
+import com.cotesport.maroc.programme.Tabs.TabFragment2;
+import com.cotesport.maroc.programme.Tabs.TabFragment3;
+import com.cotesport.maroc.programme.Tabs.TabFragment4;
+import com.cotesport.maroc.programme.Tabs.TabFragment5;
+import com.cotesport.maroc.programme.Tabs.TabFragment6;
+import com.cotesport.maroc.programme.Tabs.TabFragment8;
 
 public class FootballFragment extends Fragment implements View.OnClickListener {
 

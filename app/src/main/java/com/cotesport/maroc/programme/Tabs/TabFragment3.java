@@ -1,4 +1,4 @@
-package com.cotesport.maroc.toto.Tabs;
+package com.cotesport.maroc.programme.Tabs;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.cotesport.maroc.toto.Others.Global;
-import com.cotesport.maroc.toto.R;
+import com.cotesport.maroc.programme.Others.Global;
+import com.cotesport.maroc.programme.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -114,10 +114,9 @@ public class TabFragment3 extends Fragment {
                 holder.txt_debut.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHeureDebut());
                 holder.txt_c.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getNumeroBet());
                 holder.txt_min.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMinBets());
-                holder.txt_hdc_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcpEq1());
+                holder.txt_hdc_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHdcp());
                 holder.txt_equipe1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe1());
                 holder.txt_equipe2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe2());
-                holder.txt_hdc_2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcpEq2());
                 holder.txt_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcp1());
                 holder.txt_x.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcpx());
                 holder.txt_2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcp2());
@@ -130,10 +129,9 @@ public class TabFragment3 extends Fragment {
                 holder.txt_debut.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHeureDebut());
                 holder.txt_c.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getNumeroBet());
                 holder.txt_min.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMinBets());
-                holder.txt_hdc_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcpEq1());
+                holder.txt_hdc_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHdcp());
                 holder.txt_equipe1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe1());
                 holder.txt_equipe2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe2());
-                holder.txt_hdc_2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcpEq2());
                 holder.txt_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcp1());
                 holder.txt_x.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcpx());
                 holder.txt_2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcp2());
@@ -143,10 +141,9 @@ public class TabFragment3 extends Fragment {
                 holder.txt_debut.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHeureDebut());
                 holder.txt_c.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getNumeroBet());
                 holder.txt_min.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getMinBets());
-                holder.txt_hdc_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcpEq1());
+                holder.txt_hdc_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHdcp());
                 holder.txt_equipe1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe1());
                 holder.txt_equipe2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getEquipe2());
-                holder.txt_hdc_2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcpEq2());
                 holder.txt_1.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcp1());
                 holder.txt_x.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcpx());
                 holder.txt_2.setText(((Global) getActivity().getApplication()).getListeFootball().get(position).getHcp2());

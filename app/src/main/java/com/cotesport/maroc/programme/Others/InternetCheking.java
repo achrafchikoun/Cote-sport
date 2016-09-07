@@ -1,4 +1,4 @@
-package com.cotesport.maroc.toto.Others;
+package com.cotesport.maroc.programme.Others;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

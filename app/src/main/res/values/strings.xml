@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">Programme Cote Sport</string>
     <string name="title_activity_main">MainActivity</string>
-    <string-array name="string_array_choices">
-        <item>menu 1</item>
-        <item>menu 2</item>
-        <item>menu 3</item>
-        <item>menu 4</item>
+    <string-array name="spinner_list_item_array">
+        <item>Résultat Final</item>
+        <item>Double Chance</item>
+        <item>Résultat final avec Handicap</item>
+        <item>Mi-Temps</item>
+        <item>Moins/Plus</item>
+        <item>Total des buts</item>
     </string-array>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

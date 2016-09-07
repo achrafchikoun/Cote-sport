@@ -8,7 +8,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:413264657412:android:c24e3a0b2ede9b10",
         "android_client_info": {
-          "package_name": "com.cotesport.maroc.toto"
+          "package_name": "com.cotesport.maroc.programme"
         }
       },
       "oauth_client": [
@@ -16,7 +16,7 @@
           "client_id": "413264657412-h6o4ca9q3hmh2cptbrqsavbjaeju2muc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.cotesport.maroc.toto",
+            "package_name": "com.cotesport.maroc.programme",
             "certificate_hash": "C782349973018E17635EA71F4930150F51050870"
           }
         },

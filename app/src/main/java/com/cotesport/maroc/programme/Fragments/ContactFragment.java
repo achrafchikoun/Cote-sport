@@ -1,4 +1,4 @@
-package com.cotesport.maroc.toto.Fragments;
+package com.cotesport.maroc.programme.Fragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.cotesport.maroc.toto.R;
+import com.cotesport.maroc.programme.R;
 
 
 /**
